@@ -1,0 +1,6 @@
+ module ic5JetExtender = JetExtender {
+       InputTag jets   = iterativeCone5CaloJets
+       InputTag jet2TracksAtVX = ic5JetToTracksAssociator
+       InputTag jet2TracksAtCALO = ic5JetToTracksAssociatorAtCaloFace
+       double coneSize = 0.5
+     }
