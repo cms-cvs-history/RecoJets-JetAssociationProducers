@@ -1,0 +1,6 @@
+# $Id: CaloJetParameters.cfi,v 1.1 2007/02/08 01:46:11 fedor Exp $
+
+ block j2tParametersCALO = {
+       InputTag tracks = ctfWithMaterialTracks
+       double coneSize = 0.5
+     }

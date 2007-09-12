@@ -1,0 +1,8 @@
+# $Id: CaloJetParameters.cfi,v 1.1 2007/02/08 01:46:11 fedor Exp $
+
+include "RecoJets/JetAssociationProducers/data/j2tParametersCALO.cfi"
+
+ module ic5JetToTracksAssociatorAtCaloFace = JetToTracksAssociatorAtCaloFace {
+       using j2tParametersCALO
+       InputTag jets   = iterativeCone5CaloJets
+     }
