@@ -1,0 +1,11 @@
+# $Id: ic5JetToTracksAssociatorAtCaloFace.cff,v 1.1 2007/09/12 00:38:56 fedor Exp $
+
+include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"  #magnetic field
+include "TrackPropagation/SteppingHelixPropagator/data/SteppingHelixPropagatorAlong.cfi" #propagator
+
+include "RecoJets/JetAssociationProducers/data/j2tParametersCALO.cfi"
+
+ module ic5JetTracksAssociatorAtCaloFace = JetTracksAssociatorAtCaloFace {
+       using j2tParametersCALO
+       InputTag jets   = iterativeCone5CaloJets
+     }

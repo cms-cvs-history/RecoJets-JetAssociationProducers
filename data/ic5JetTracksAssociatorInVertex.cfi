@@ -1,8 +1,8 @@
-# $Id: CaloJetParameters.cfi,v 1.1 2007/02/08 01:46:11 fedor Exp $
+# $Id: ic5JetToTracksAssociator.cfi,v 1.1 2007/09/12 00:38:56 fedor Exp $
 
 include "RecoJets/JetAssociationProducers/data/j2tParametersVX.cfi"
 
- module ic5JetToTracksAssociator = JetToTracksAssociator {
+ module ic5JetTracksAssociatorInVertex = JetTracksAssociatorInVertex {
        using j2tParametersVX
        InputTag jets   = iterativeCone5CaloJets
      }
