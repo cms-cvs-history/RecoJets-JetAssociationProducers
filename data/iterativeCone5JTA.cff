@@ -1,0 +1,28 @@
+# $Id: iterativeCone5JetTracksAssociatorAtVertex.cfi,v 1.1 2007/09/20 22:32:40 fedor Exp $
+
+include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"  #magnetic field
+include "TrackPropagation/SteppingHelixPropagator/data/SteppingHelixPropagatorAlong.cfi" #propagator
+
+include "RecoJets/JetAssociationProducers/data/j2tParametersCALO.cfi"
+include "RecoJets/JetAssociationProducers/data/j2tParametersVX.cfi"
+
+ module iterativeCone5JetTracksAssociatorAtVertex = JetTracksAssociatorAtVertex {
+       using j2tParametersVX
+       InputTag jets   = iterativeCone5CaloJets
+     }
+
+ module iterativeCone5JetTracksAssociatorAtCaloFace = JetTracksAssociatorAtCaloFace {
+       using j2tParametersCALO
+       InputTag jets   = iterativeCone5CaloJets
+     }
+
+ module iterativeCone5JetExtender = JetExtender {
+       InputTag jets   = iterativeCone5CaloJets
+       InputTag jet2TracksAtVX = iterativeCone5JetTracksAssociatorAtVertex
+       InputTag jet2TracksAtCALO = iterativeCone5JetTracksAssociatorAtCaloFace
+       double coneSize = 0.5
+     }
+
+sequence iterativeCone5JTA = {
+  iterativeCone5JetTracksAssociatorAtVertex, iterativeCone5JetTracksAssociatorAtCaloFace, iterativeCone5JetExtender
+}

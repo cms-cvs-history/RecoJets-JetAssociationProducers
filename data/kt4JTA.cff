@@ -1,0 +1,28 @@
+# $Id: kt4JetTracksAssociatorAtVertex.cfi,v 1.1 2007/09/20 22:32:40 fedor Exp $
+
+include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"  #magnetic field
+include "TrackPropagation/SteppingHelixPropagator/data/SteppingHelixPropagatorAlong.cfi" #propagator
+
+include "RecoJets/JetAssociationProducers/data/j2tParametersCALO.cfi"
+include "RecoJets/JetAssociationProducers/data/j2tParametersVX.cfi"
+
+ module kt4JetTracksAssociatorAtVertex = JetTracksAssociatorAtVertex {
+       using j2tParametersVX
+       InputTag jets   = kt4CaloJets
+     }
+
+ module kt4JetTracksAssociatorAtCaloFace = JetTracksAssociatorAtCaloFace {
+       using j2tParametersCALO
+       InputTag jets   = kt4CaloJets
+     }
+
+ module kt4JetExtender = JetExtender {
+       InputTag jets   = kt4CaloJets
+       InputTag jet2TracksAtVX = kt4JetTracksAssociatorAtVertex
+       InputTag jet2TracksAtCALO = kt4JetTracksAssociatorAtCaloFace
+       double coneSize = 0.5
+     }
+
+sequence kt4JTA = {
+  kt4JetTracksAssociatorAtVertex, kt4JetTracksAssociatorAtCaloFace, kt4JetExtender
+}
