@@ -1,6 +1,7 @@
-# $Id: j2tParametersVX.cfi,v 1.1 2007/09/12 00:38:56 fedor Exp $
+# $Id: j2tParametersVX.cfi,v 1.2 2008/02/19 21:43:07 fedor Exp $
 
  block j2tParametersVX = {
        InputTag tracks = generalTracks
+       string trackQuality = "goodIterative"
        double coneSize = 0.5
      }
