@@ -1,7 +1,0 @@
-
-include "RecoJets/JetAssociationProducers/data/j2tParametersVX.cfi"
-
- module ic5PFJetTracksAssociatorAtVertex = JetTracksAssociatorAtVertex {
-       using j2tParametersVX
-       InputTag jets   = iterativeCone5PFJets
-     }
