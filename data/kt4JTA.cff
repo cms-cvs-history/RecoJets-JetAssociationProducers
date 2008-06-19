@@ -1,6 +1,5 @@
-# $Id: kt4JetTracksAssociatorAtVertex.cfi,v 1.1 2007/09/20 22:32:40 fedor Exp $
+# $Id: kt4JTA.cff,v 1.1 2007/10/26 22:26:03 fedor Exp $
 
-include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"  #magnetic field
 include "TrackPropagation/SteppingHelixPropagator/data/SteppingHelixPropagatorAlong.cfi" #propagator
 
 include "RecoJets/JetAssociationProducers/data/j2tParametersCALO.cfi"
