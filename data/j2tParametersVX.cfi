@@ -1,6 +1,0 @@
-# $Id: j2tParametersVX.cfi,v 1.1 2007/09/12 00:38:56 fedor Exp $
-
- block j2tParametersVX = {
-       InputTag tracks = generalTracks
-       double coneSize = 0.5
-     }
