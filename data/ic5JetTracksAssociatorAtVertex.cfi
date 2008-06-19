@@ -1,8 +1,0 @@
-# $Id: ic5JetTracksAssociatorAtVertex.cfi,v 1.1 2007/09/19 18:29:56 fedor Exp $
-
-include "RecoJets/JetAssociationProducers/data/j2tParametersVX.cfi"
-
- module ic5JetTracksAssociatorAtVertex = JetTracksAssociatorAtVertex {
-       using j2tParametersVX
-       InputTag jets   = iterativeCone5CaloJets
-     }
