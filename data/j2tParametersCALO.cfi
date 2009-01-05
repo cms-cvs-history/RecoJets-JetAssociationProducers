@@ -1,7 +1,0 @@
-# $Id: j2tParametersCALO.cfi,v 1.2 2008/02/19 21:43:07 fedor Exp $
-
- block j2tParametersCALO = {
-       InputTag tracks = generalTracks
-       string trackQuality = "goodIterative"
-       double coneSize = 0.5
-     }
